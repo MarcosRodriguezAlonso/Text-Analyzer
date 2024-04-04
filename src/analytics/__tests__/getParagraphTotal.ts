@@ -1,4 +1,4 @@
-import { getParagraphsTotal } from "../analytics/index.js";
+import { getParagraphsTotal } from "../index.js";
 
 console.log(
   getParagraphsTotal(`Hola.
