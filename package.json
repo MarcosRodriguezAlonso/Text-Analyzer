@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "serve public"
+    "start": "serve public",
+    "build:dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",

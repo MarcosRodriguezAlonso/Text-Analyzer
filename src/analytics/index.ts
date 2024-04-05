@@ -7,8 +7,3 @@ export const getParagraphsTotal = (text: string): number => {
 
   return paragraphTotal.length;
 };
-
-export const getSentenceWordsTotal = (text: string): number => {
-  const splittedSentence = text.split(" ");
-  return splittedSentence.length;
-};
