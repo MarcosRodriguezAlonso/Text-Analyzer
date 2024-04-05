@@ -1,11 +1,11 @@
 export const getParagraphsTotal = (text: string): number => {
-  const textSplitted = text.split(/\n\n/);
+  let paragraphTotal = text.trim().split(/\n/);
 
   if (!text) {
     return 0;
-  } else {
-    return textSplitted.length;
   }
+
+  return paragraphTotal.length;
 };
 
 export const getSentenceWordsTotal = (text: string): number => {
