@@ -1,7 +1,8 @@
 export const getParagraphsTotal = (text: string): number => {
-  let paragraphTotal = text.trim().split(/\n/);
+  const paragraphTotal = text.split(/\n\n/);
+  const EmptyText = text === "";
 
-  if (!text) {
+  if (EmptyText) {
     return 0;
   }
 

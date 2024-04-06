@@ -1,19 +1,39 @@
 import { getParagraphsTotal } from "../index.js";
 
-const givenResult = getParagraphsTotal("");
-const expectedResult = 0;
+const returns0test = () => {
+  const paragraphsTotal = getParagraphsTotal("");
+  const expectedParagraphsTotal = 0;
+  const isCorrect1 = paragraphsTotal === expectedParagraphsTotal;
 
-const testPassed = expectedResult === givenResult;
+  if (isCorrect1) {
+    console.log(`Shows 0 if there is no text? ${isCorrect1}`);
+  }
+};
 
-if (testPassed) {
-  console.log(`text is empty equal 0: ${testPassed}`);
-}
+const returns1test = () => {
+  const paragraphsTotal2 = getParagraphsTotal("Hola");
+  const expectedParagraphsTotal2 = 1;
 
-const givenResult2 = getParagraphsTotal("Hola");
-const expectedResult2 = 1;
+  const isCorrect2 = expectedParagraphsTotal2 === paragraphsTotal2;
 
-const testPassed2 = expectedResult2 === givenResult2;
+  if (isCorrect2) {
+    console.log(`Shows 1 if there is only 1 paragraph? ${isCorrect2}`);
+  }
+};
 
-if (testPassed) {
-  console.log(testPassed2);
-}
+const returnsParagraphsCorrectNumber = () => {
+  const paragraphsTotal3 = getParagraphsTotal(`Hola
+
+Adiós`);
+
+  const expectedParagraphsTotal3 = 2;
+  const isCorrect3 = expectedParagraphsTotal3 === paragraphsTotal3;
+
+  if (isCorrect3) {
+    console.log(`Shows correct number of paragraphs? ${isCorrect3}`);
+  }
+};
+
+//returns0test
+//returns1test
+//returnsParagraphsCorrectNumber();
