@@ -1,6 +1,6 @@
-import { getSeparatedWords } from "../index.js";
+//import { getSeparatedWords } from "../index.js";
 
-const returnsEmptyString = () => {
+/*const returnsEmptyString = () => {
   const emptyString = getSeparatedWords("");
   const expectedString = "";
   const isCorrect = emptyString === expectedString;
@@ -12,4 +12,4 @@ const returnsEmptyString = () => {
   }
 };
 
-//returnsEmptyString();
+//returnsEmptyString();*/
