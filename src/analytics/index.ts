@@ -87,13 +87,13 @@ export const getShortWords = (text: string, maxLength: number = 4): string => {
 
 export const getLongWords = (text: string, minLength: number = 8): string => {
   if (!text) {
-    return ``;
+    return "";
   }
 
   const words: string[] = text.split(/\s/);
-  const longtWords: string[] = words.filter(
+  const longWords: string[] = words.filter(
     (word) => word.length >= minLength && word !== ""
   );
 
-  return longtWords.toString();
+  return longWords.toString();
 };
