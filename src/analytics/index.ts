@@ -65,3 +65,35 @@ export const getLongWordsTotal = (
 
   return longtWords;
 };
+
+export const getSeparatedWords = (words: string): string => {
+  const separatedWords = words.split(/[ ,-]/);
+
+  return separatedWords.join(",").toString();
+};
+
+export const getShortWords = (text: string, maxLength: number = 4): string => {
+  if (!text) {
+    return ``;
+  }
+
+  const words: string[] = text.split(/\s/);
+  const shortWords: string[] = words.filter(
+    (word) => word.length <= maxLength && word !== ""
+  );
+
+  return shortWords.toString();
+};
+
+export const getLongWords = (text: string, minLength: number = 8): string => {
+  if (!text) {
+    return ``;
+  }
+
+  const words: string[] = text.split(/\s/);
+  const longtWords: string[] = words.filter(
+    (word) => word.length >= minLength && word !== ""
+  );
+
+  return longtWords.toString();
+};
