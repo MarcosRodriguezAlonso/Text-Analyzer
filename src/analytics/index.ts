@@ -33,3 +33,19 @@ export const getCharactersTotal = (text: string): number => {
 
   return characters.length;
 };
+
+export const getShortWordsTotal = (
+  text: string,
+  maxLength: number = 4
+): number => {
+  if (!text) {
+    return 0;
+  }
+
+  const words: string[] = text.split(/\s/);
+  const shortWords: string[] = words.filter(
+    (word) => word.length <= maxLength && word !== ""
+  );
+
+  return shortWords.length;
+};

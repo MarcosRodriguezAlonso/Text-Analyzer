@@ -1,6 +1,7 @@
 import {
   getCharactersTotal,
   getParagraphsTotal,
+  getShortWordsTotal,
   getWordsTotal,
 } from "../analytics/index.js";
 
@@ -49,14 +50,14 @@ const renderCharactersTotal = (charactersTotal: number): void => {
     charactersTotal.toString();
 };
 
-const renderShortWordsTotal = (shortWords: string[]): void => {
+const renderShortWordsTotal = (shortWordsTotal: number): void => {
   document.querySelector(".short-words-count")!.textContent =
-    shortWords.length.toString();
+    shortWordsTotal.toString();
 };
 
-const renderLongWordsTotal = (longWords: string[]): void => {
+const renderLongWordsTotal = (longWordsTotal: string[]): void => {
   document.querySelector(".long-words-count")!.textContent =
-    longWords.length.toString();
+    longWordsTotal.length.toString();
 };
 
 const renderShortWordsList = (shortWords: string): void => {
@@ -148,4 +149,5 @@ export const analyzeText = (text: string): void => {
   renderParagraphsTotal(getParagraphsTotal(text));
   renderWordsTotal(getWordsTotal(text));
   renderCharactersTotal(getCharactersTotal(text));
+  renderShortWordsTotal(getShortWordsTotal(text));
 };
