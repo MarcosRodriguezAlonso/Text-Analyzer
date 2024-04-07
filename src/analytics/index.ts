@@ -49,3 +49,19 @@ export const getShortWordsTotal = (
 
   return shortWords.length;
 };
+
+export const getLongWordsTotal = (
+  text: string,
+  minLength: number = 8
+): string[] => {
+  if (!text) {
+    return ["0"];
+  }
+
+  const words: string[] = text.split(/\s/);
+  const longtWords: string[] = words.filter(
+    (word) => word.length >= minLength && word !== ""
+  );
+
+  return longtWords;
+};

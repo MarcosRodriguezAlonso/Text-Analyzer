@@ -1,5 +1,6 @@
 import {
   getCharactersTotal,
+  getLongWordsTotal,
   getParagraphsTotal,
   getShortWordsTotal,
   getWordsTotal,
@@ -150,4 +151,5 @@ export const analyzeText = (text: string): void => {
   renderWordsTotal(getWordsTotal(text));
   renderCharactersTotal(getCharactersTotal(text));
   renderShortWordsTotal(getShortWordsTotal(text));
+  renderLongWordsTotal(getLongWordsTotal(text));
 };
