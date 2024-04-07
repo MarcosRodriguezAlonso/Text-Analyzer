@@ -65,3 +65,9 @@ export const getLongWordsTotal = (
 
   return longtWords;
 };
+
+export const getSeparatedWords = (words: string): string => {
+  const separatedWords = words.split(",");
+
+  return separatedWords.toSpliced().toString();
+};
