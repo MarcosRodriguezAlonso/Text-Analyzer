@@ -1,14 +1,14 @@
 import { get } from "http";
 import { text } from "stream/consumers";
 
-const IsEmptyText = (text: string): boolean => {
+const isEmptyText = (text: string): boolean => {
   return text.trim() === "";
 };
 
 export const getParagraphsTotal = (text: string): number => {
   const paragraphTotal = text.split(/\n\n/);
 
-  if (IsEmptyText(text)) {
+  if (isEmptyText(text)) {
     return 0;
   }
 
@@ -17,9 +17,9 @@ export const getParagraphsTotal = (text: string): number => {
 
 export const getWordsTotal = (text: string): number => {
   const words = text.split(/[\s\n]/);
-  const totalWords = words.filter((word) => !IsEmptyText(word));
+  const totalWords = words.filter((word) => !isEmptyText(word));
 
-  if (IsEmptyText(text)) {
+  if (isEmptyText(text)) {
     return 0;
   }
 
@@ -27,9 +27,9 @@ export const getWordsTotal = (text: string): number => {
 };
 
 export const getCharactersTotal = (text: string): number => {
-  const characters = text.split(``);
+  const characters = text
+    .split(``)
+    .filter((character) => character !== `\n` && character !== " ");
 
   return characters.length;
 };
-
-getCharactersTotal("Hola qué hase");
